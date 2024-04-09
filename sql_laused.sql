@@ -1,7 +1,7 @@
 MS SQL Server managment studio
 Server Name: localdb/(...) & windows auth
 Primary key - Делает каждый предмет уникальным
-FK - Fr
+FK - FOREIGN KEY
 CREATE DATABASE murdveetitpv22;
 
 CREATE DATABASE murdveetitpv22;
