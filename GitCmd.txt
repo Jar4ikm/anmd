@@ -1,0 +1,7 @@
+git init [name]				 - создать гит
+git config --global user.name "name"	 - поменять имя
+git config --global user.email "email"	 - поменять почту
+git config --global --list 		 - лист
+git status
+git add . 
+git commit -a -m "name"
