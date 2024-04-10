@@ -12,5 +12,3 @@ Primaarne võti - первичный ключ | Primary key
 Väline võti - вторичный ключ | Foregin key
 Päring - запрос | Query
 Käivita - Выполнить | Execute
-
-t
