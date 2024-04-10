@@ -18,6 +18,9 @@ date_name date);
 -- Удаление таблицы
 DROP table table_name;
 
+-- Удаление записи
+DELETE FROM table_name WHERE ID = 1;
+
 -- Добавить запись в таблицу
 INSERT INTO table_name(var_char_name,int_name,date_name) VALUES ('short_text',15,'2024-08-20');
 
