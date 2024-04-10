@@ -3,10 +3,13 @@ Server Name: localdb/(...) & windows auth
   
 PK - Primary key
 FK - Foreign key
-  
+
+-- Создание базы данных
 CREATE DATABASE base_name;
 
+-- "Войти" в базу данных
 USE base_name;
+
 -- Пример создания таблицы:
 CREATE TABLE table_name(
 ID int Primary key identity(1,1),
@@ -17,6 +20,9 @@ date_name date);
 
 -- Удаление таблицы
 DROP table table_name;
+
+-- Удаление базы данных
+DROP DATABASE base_name;
 
 -- Удаление записи
 DELETE FROM table_name WHERE ID = 1;
