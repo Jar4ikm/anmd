@@ -26,7 +26,7 @@ INSERT INTO table_name(var_char_name,int_name,date_name) VALUES ('short_text',15
 
 -- Изменить запись
 UPDATE table_name SET text_name=':))' where var_char_name='short_text';
-UPDATE table_name SET text_name=':))' where text_name IS NULL;
+UPDATE table_name SET text_name=':))' where text_name IS NULL; -- Заменяет пустоту на ":))" в полях text_name
 
 -- Добавление строки в таблицу
 ALTER TABLE table_name ADD added_name_for_FK varchar(50);
