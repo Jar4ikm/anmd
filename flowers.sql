@@ -36,13 +36,28 @@ ALTER TABLE myyk ADD FOREIGN KEY (tootajaID) REFERENCES tootaja(tootajaID);
 ALTER TABLE myyk ADD FOREIGN KEY (kaupID) REFERENCES kaup(kaupID);
 ALTER TABLE myyk ADD FOREIGN KEY (kliendikaartID) REFERENCES kliendikaart(kliendikaartID);
 
-select * from tootaja;
-select * from kaup;
-select * from kliendikaart;
-select * from myyk;
+
 
 INSERT INTO myyk(tootajaID,kaupID,kogus,hind,kliendikaartID) VALUES (1,1,1,'7.4',1);
 
 
+-- table 5 shop
+CREATE TABLE pood(
+poodID int Primary key identity(1,1),
+tootajaID int,
+poodstatus bit ,
+kirjeldus text,);
 
-UPDATE kaup SET kaup='smth good' where kaup='amazing shop';
+INSERT INTO pood(tootajaID,poodstatus,kirjeldus) VALUES (1,'True','good shop');
+ALTER TABLE pood ADD FOREIGN KEY (tootajaID) REFERENCES tootaja(tootajaID);
+ALTER TABLE kaup ADD poodID INT;
+ALTER TABLE myyk ADD kuupaev date;
+ALTER TABLE kaup ADD FOREIGN KEY (poodID) REFERENCES pood(poodID);
+
+
+select * from tootaja;
+select * from kaup;
+select * from kliendikaart;
+select * from myyk;
+select * from pood;
+
