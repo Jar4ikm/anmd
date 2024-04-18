@@ -59,3 +59,73 @@ BEGIN
 	select * from tootaja;
 END;
 Exec tootajakustuta 3;
+
+
+
+
+
+-----------
+
+
+
+
+-- tabeli struktuuri muutmine
+
+CREATE PROCEDURE muudatus
+@tegevus varchar(10),
+@tabelinimi varchar(25),
+@veerunimi varchar(25),
+@tyyp varchar(25) =null
+AS
+BEGIN
+	DECLARE @sqltegevus as varchar(max)
+	set @sqltegevus=case 
+	when @tegevus='add' then concat('ALTER TABLE ', 
+	@tabelinimi, ' ADD ', @veerunimi, ' ', @tyyp)
+
+	when @tegevus='drop' then concat('ALTER TABLE ', 
+	@tabelinimi, ' DROP COLUMN ', @veerunimi)
+END;
+print @sqltegevus;
+begin 
+	EXEC (@sqltegevus);
+END
+END;
+
+
+--добавление столбца
+EXEC muudatus @tegevus='add', @tabelinimi='tootaja', @veerunimi='test', @tyyp='text';
+--удаление столбца
+EXEC muudatus @tegevus='drop', @tabelinimi='tootaja', @veerunimi='test';
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create Procedure addtable
+@table_name varchar(50),
+@IDname varchar(50)
+as
+BEGIN
+declare @ddl varchar(8000)
+	set @ddl=concat('Create Table ', @table_name,'(', @IDname, ' int Primary key identity(1,1))');
+	print @ddl;
+	begin
+	EXEC (@ddl);
+	end
+END;
+
+Exec addtable 'test', 'ID';
+
+
+
+
+
