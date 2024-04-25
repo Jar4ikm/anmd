@@ -1,6 +1,0 @@
-XAMPP Control Panel
-Apache - Start
-MySql - Start
-
-User - root
-Pass - none
