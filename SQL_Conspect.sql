@@ -41,3 +41,24 @@ ALTER TABLE table_name ADD added_name_for_FK varchar(50);
 ALTER TABLE table_name ADD FOREIGN KEY (added_name_for_FK) REFERENCES second_table(target_for_FK);
 
 
+
+
+
+
+
+------------------
+Create table linnad(
+linnID int Auto_increment PRIMARY KEY,
+linnanimi varchar(15),
+rahvaarv int);
+
+Create table logi(
+id int Auto_increment PRIMARY KEY,
+aeg DATETIME,
+toiming  varchar(100),
+andmed varchar(200),
+kasutajad varchar(100)
+)
+
+
+
