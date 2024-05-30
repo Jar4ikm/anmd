@@ -1,3 +1,4 @@
+https://moodle.edu.ee/mod/quiz/review.php?attempt=5776288&cmid=852619
 -- ???????? ??????? KyberSport
 CREATE TABLE KyberSport(
 KyberSportID int Primary key identity(1,1),
