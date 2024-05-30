@@ -1,19 +1,19 @@
--- Создание таблицы KyberSport
+-- ???????? ??????? KyberSport
 CREATE TABLE KyberSport(
 KyberSportID int Primary key identity(1,1),
 KyberRyhmNimi varchar(50),
 osalejateArv int
 );
--- Создание таблицы Mang
+-- ???????? ??????? Mang
 CREATE TABLE Mang(
 MangID int Primary key identity(1,1),
 MangNimi varchar(50)
 );
--- Создание вторичного ключа
+-- ???????? ?????????? ?????
 ALTER TABLE KyberSport ADD MangID int;
 ALTER TABLE KyberSport ADD FOREIGN KEY (MangID) REFERENCES Mang(MangID);
 
--- Заполняем таблицы
+-- ????????? ???????
 INSERT INTO Mang(MangNimi) VALUES ('Dota2');
 INSERT INTO Mang(MangNimi) VALUES ('CS2');
 INSERT INTO Mang(MangNimi) VALUES ('Valorant');
@@ -31,18 +31,18 @@ INSERT INTO KyberSport(KyberRyhmNimi, osalejateArv, MangID) VALUES ('SomeName', 
 select * from KyberSport
 select * from Mang
 
--- Выдача прав пользователю opilane
+-- ?????? ???? ???????????? opilane
 GRANT INSERT,SELECT ON Mang TO opilane;
 GRANT INSERT,SELECT ON KyberSport TO opilane;
 
--- Создание таблицу логов
+-- ???????? ??????? ?????
 CREATE TABLE logi(
 id int Primary key identity(1,1),
 kasutaja varchar(50),
 kuupaev varchar(50),
 sisestatudAndmed text);
 
--- Создание Тригеров
+-- ???????? ????????
 CREATE TRIGGER KyberKutsutamine ON KyberSport
 FOR DELETE
 AS BEGIN
@@ -56,7 +56,7 @@ Insert into logi(kasutaja,kuupaev, sisestatudAndmed) SELECT USER, GETDATE(), CON
 INNER JOIN Mang ON inserted.MangID = Mang.MangID;
 
 END
--- Проверка
+-- ????????
 INSERT INTO KyberSport(KyberRyhmNimi, osalejateArv, MangID) VALUES ('VirtusPro', 5, 2);
 select * from logi
 
@@ -64,7 +64,7 @@ select * from logi
 
 
 
--- Создание процедуры
+-- ???????? ?????????
 Create Procedure Find
 @inputnimi varchar(50)
 
