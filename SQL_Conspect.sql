@@ -42,11 +42,7 @@ ALTER TABLE table_name ADD FOREIGN KEY (added_name_for_FK) REFERENCES second_tab
 
 
 
-
-
-
-
-------------------  Päästik - trigger
+------------------  
 Create table linnad(
 linnID int Auto_increment PRIMARY KEY,
 linnanimi varchar(15),
